@@ -1,0 +1,31 @@
+/* Certification vault — append to app/globals.css */
+.certificate-section{width:min(100% - 48px,1480px);margin:0 auto;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:110px}
+.certificate-section-heading{margin-bottom:42px}
+.certificate-eyebrow{margin:0 0 18px;color:var(--green,#8cff66);font:700 .9rem/1.2 var(--font-mono,monospace);letter-spacing:.04em}
+.certificate-section-heading h2{max-width:900px;margin:0;color:var(--yellow,#ffda3e);font:800 clamp(2.2rem,4vw,3.5rem)/1.08 var(--font-mono,monospace);letter-spacing:.025em;text-transform:uppercase}
+.certificate-vault-control{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px;border:1px solid var(--line,#796515);background:var(--panel,#0d0d0a);margin-bottom:30px}
+.certificate-vault-control p{margin:0;color:var(--text,#f5f0d8);line-height:1.65}
+.certificate-vault-control .certificate-count{margin-top:10px;color:var(--green,#8cff66);font:700 .88rem/1.4 var(--font-mono,monospace)}
+.certificate-vault-toggle{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:58px;padding:0 24px;border:1px solid var(--yellow,#ffda3e);background:var(--yellow,#ffda3e);color:#080808;font:800 .8rem/1.2 var(--font-mono,monospace);cursor:pointer;box-shadow:6px 6px 0 var(--shadow-gold,#493900);transition:transform 150ms ease,box-shadow 150ms ease}
+.certificate-vault-toggle:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--shadow-gold,#493900)}
+.certificate-vault-toggle:active{transform:translate(6px,6px);box-shadow:none}
+.certificate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;overflow:hidden;transition:opacity 220ms ease,max-height 350ms ease,transform 220ms ease}
+.certificate-grid.is-open{max-height:5000px;opacity:1;transform:translateY(0)}
+.certificate-grid.is-closed{max-height:0;opacity:0;transform:translateY(-8px);pointer-events:none}
+.certificate-card{position:relative;display:flex;min-height:250px;flex-direction:column;align-items:flex-start;padding:26px;border:1px solid var(--line,#796515);background:var(--panel,#0d0d0a);box-shadow:6px 6px 0 var(--shadow-gold,#493900);animation:certificate-card-in 420ms both;transition:border-color 160ms ease,transform 160ms ease,box-shadow 160ms ease}
+.certificate-card:hover{border-color:var(--yellow,#ffda3e);transform:translateY(-3px);box-shadow:6px 9px 0 var(--shadow-gold,#493900)}
+.certificate-card-top{display:flex;width:100%;align-items:center;justify-content:space-between;margin-bottom:22px;color:var(--yellow,#ffda3e)}
+.certificate-document-icon{width:32px;height:32px}
+.certificate-open-label{color:var(--green,#8cff66);font:700 .75rem/1 var(--font-mono,monospace)}
+.certificate-card h3{margin:0 0 16px;color:var(--yellow,#ffda3e);font:800 clamp(1.05rem,1.4vw,1.35rem)/1.35 var(--font-mono,monospace);text-transform:uppercase;overflow-wrap:anywhere}
+.certificate-issuer{margin:0 0 12px;color:var(--text,#f5f0d8);font-weight:600;line-height:1.5}
+.certificate-date{display:flex;align-items:center;gap:9px;margin:0 0 16px;color:var(--muted,#9c9882);font:700 .78rem/1.4 var(--font-mono,monospace);text-transform:uppercase}
+.certificate-date span{color:var(--yellow,#ffda3e);font-size:1.05rem}
+.certificate-note{margin:0 0 16px;color:var(--muted,#b7b19a);font-size:.82rem;line-height:1.5}
+.certificate-open-link{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:14px;color:var(--green,#8cff66);font:800 .78rem/1.4 var(--font-mono,monospace);text-decoration:none}
+.certificate-open-link:hover{color:var(--yellow,#ffda3e);text-decoration:underline;text-underline-offset:4px}
+.certificate-vault-toggle:focus-visible,.certificate-open-link:focus-visible{outline:2px solid var(--yellow,#ffda3e);outline-offset:4px}
+@keyframes certificate-card-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1000px){.certificate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.certificate-section{width:min(100% - 32px,1480px);padding:64px 0}.certificate-vault-control{align-items:stretch;flex-direction:column;padding:20px}.certificate-vault-toggle{width:100%}.certificate-grid{grid-template-columns:1fr;gap:16px}.certificate-card{min-height:220px;padding:22px}}
+@media(prefers-reduced-motion:reduce){.certificate-card,.certificate-vault-toggle,.certificate-grid{animation:none;transition:none}}
